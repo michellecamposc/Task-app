@@ -3,7 +3,7 @@ import TaskForm from "./TaskForm";
 import Task from "../components/Task";
 import "../styles/taskList.css";
 
-export const TaskList = (task) => {
+export const TaskList = () => {
   const [tasks, setTasks] = useState([]);
 
   const addTask = (task) => {

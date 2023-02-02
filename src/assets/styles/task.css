@@ -43,6 +43,6 @@
 /* Task completed*/
 
 .task-container.completed {
-  background-color: #5a01a7;
+  background-color: darkgreen;
   text-decoration: line-through;
 }

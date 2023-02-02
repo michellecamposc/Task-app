@@ -9,7 +9,7 @@ const TaskForm = (props) => {
     setInput(e.target.value);
   };
 
-  const handleSending = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const newTask = {
       id: uuidv4(),
@@ -20,7 +20,7 @@ const TaskForm = (props) => {
   };
 
   return (
-    <form className="task-form" onSubmit={handleSending}>
+    <form className="task-form" onSubmit={handleSubmit}>
       <input
         className="task-input"
         type="text"
@@ -28,7 +28,9 @@ const TaskForm = (props) => {
         name="text"
         onChange={handleChange}
       />
-      <button className="task-button">Add Task</button>
+      <button className="task-button" type="submit">
+        Add Task
+      </button>
     </form>
   );
 };
