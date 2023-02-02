@@ -20,6 +20,16 @@ export const TaskList = (task) => {
     setTasks(updatedTask);
   };
 
+  const completeTask = (id) => {
+    const updatedTasks = tasks.map((task) => {
+      if (task.id === id) {
+        task.completed = !task.completed;
+      }
+      return task;
+    });
+    setTasks(updatedTasks);
+  };
+
   return (
     <>
       <TaskForm onSubmit={addTask} />
@@ -31,6 +41,7 @@ export const TaskList = (task) => {
             text={task.text}
             completed={task.completed}
             deleteTask={deleteTask}
+            completeTask={completeTask}
           />
         ))}
       </div>
