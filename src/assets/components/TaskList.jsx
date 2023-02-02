@@ -3,7 +3,7 @@ import TaskForm from "./TaskForm";
 import Task from "../components/Task";
 import "../styles/taskList.css";
 
-export const TaskList = () => {
+export const TaskList = (task) => {
   const [tasks, setTasks] = useState([]);
 
   const addTask = (task) => {
@@ -13,6 +13,11 @@ export const TaskList = () => {
       const updatedTask = [task, ...tasks];
       setTasks(updatedTask);
     }
+  };
+
+  const deleteTask = (id) => {
+    const updatedTask = tasks.filter((task) => task.id !== id);
+    setTasks(updatedTask);
   };
 
   return (
@@ -25,6 +30,7 @@ export const TaskList = () => {
             id={task.id}
             text={task.text}
             completed={task.completed}
+            deleteTask={deleteTask}
           />
         ))}
       </div>
