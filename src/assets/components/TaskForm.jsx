@@ -19,6 +19,10 @@ const TaskForm = (props) => {
     props.onSubmit(newTask);
   };
 
+  const clearInput = () => {
+    setValue("");
+  };
+
   return (
     <form className="task-form" onSubmit={handleSubmit}>
       <input
